@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <title>DirectUpload</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fileupload.js"></script>
+  <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  </script>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Direct Upload</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span9">
+          <form action="http://direct-upload-s3.s3.amazonaws.com" class="direct-upload" enctype="multipart/form-data" method="post">
+            <input name="key" type="hidden">
+            <input name="AWSAccessKeyId" type="hidden" value="AKIAICIGD5HKAGR52HNQ">
+            <input name="acl" type="hidden" value="public-read">
+            <input name="policy" type="hidden">
+            <input name="signature" type="hidden">
+            <input name="success_action_status" type="hidden" value="201">
+            <input name="file" type="file">
+            <div class="progress progress-striped active">
+              <div class="bar"></div>
+            </div>
+          </form>
+          <a href id="link" style="display: none;" target="_blank"></a>
+          <img id="preview" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
